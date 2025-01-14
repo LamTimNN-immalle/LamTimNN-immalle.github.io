@@ -20,7 +20,9 @@ li
 
 li img
 {
-    margin: 20%;
+    margin-right: 20%;
+    height: 50%;
+    width: 20%;
 }
 
 nav
@@ -28,6 +30,7 @@ nav
     float: right;
     position: fixed;
     height: 10%;
+    border-radius: 10px;
 }
 
 article
