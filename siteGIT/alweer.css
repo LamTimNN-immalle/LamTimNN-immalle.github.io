@@ -8,6 +8,7 @@ header
     float: left;
     position: fixed;
     height: 10%;
+    
 }
 
 img header
@@ -16,15 +17,15 @@ img header
     height: 8%;
 }
 
+li
+{
+    display: inline;
+    margin-right: 10px;
+}
+
 nav
 {
     float: right;
     position: fixed;
     height: 10%;
-}
-
-li
-{
-    display: inline;
-    margin-right: 10px;
 }
