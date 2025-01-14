@@ -22,3 +22,9 @@ nav
     position: fixed;
     height: 10%;
 }
+
+li
+{
+    display: inline;
+    margin-right: 10px;
+}
