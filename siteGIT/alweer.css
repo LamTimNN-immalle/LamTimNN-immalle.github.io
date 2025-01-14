@@ -1,6 +1,7 @@
 body
 {
     background-color: gray;
+    
 }
 
 header
@@ -28,4 +29,9 @@ nav
     float: right;
     position: fixed;
     height: 10%;
+}
+
+article
+{
+    margin: 10px auto 10px auto;
 }
