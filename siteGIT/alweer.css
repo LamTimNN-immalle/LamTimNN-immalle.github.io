@@ -1,0 +1,23 @@
+body
+{
+    background-color: gray;
+}
+
+header
+{
+    float: left;
+    position: fixed;
+    height: 10%;
+}
+
+img header
+{
+    width: 10%;
+    height: 8%;
+}
+
+nav
+{
+    position: fixed;
+    height: 10%;
+}
