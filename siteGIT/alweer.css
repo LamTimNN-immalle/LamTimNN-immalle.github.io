@@ -1,6 +1,6 @@
 body
 {
-    background-color: gray;
+    background-color: rgb(233, 227, 227);
     
 }
 
@@ -9,13 +9,7 @@ header
     float: left;
     position: fixed;
     height: 10%;
-    
-}
-
-img header
-{
-    width: 10%;
-    height: 8%;
+    margin-left: 40%;
 }
 
 li
