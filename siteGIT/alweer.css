@@ -64,13 +64,14 @@ li a:hover, .dropdown:hover .dropdown
 li img
 {
     margin-right: 20%;
+    min-width: 40px;
+    min-height: 20px;
     height: 50%;
     width: 20%;
 }
-
 .inhoud
 {
-    margin: 20% auto 10px auto;
+    margin: 10% auto 10px auto;
     width: 80%;
 }
 
