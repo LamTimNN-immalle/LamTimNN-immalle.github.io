@@ -4,14 +4,6 @@ body
     
 }
 
-header
-{
-    float: left;
-    position: fixed;
-    height: 10%;
-    margin-right: 40%;
-}
-
 li
 {
     display: inline;
@@ -27,13 +19,12 @@ li img
 
 nav
 {
-    float: right;
     position: fixed;
     height: 10%;
     border-radius: 10px;
 }
 
-article
+.inhoud
 {
     margin: 10px auto 10px auto;
     width: 80%;
