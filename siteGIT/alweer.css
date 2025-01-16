@@ -42,13 +42,12 @@ li img
 
 nav
 {
-    position: fixed;
     height: 10%;
     border-radius: 10px;
 }
 
 .inhoud
 {
-    margin: 10px auto 10px auto;
+    margin: 20% auto 10px auto;
     width: 80%;
 }
