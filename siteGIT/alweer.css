@@ -61,14 +61,6 @@ li a:hover, .dropdown:hover .dropdown
     display: block;
 }
 
-li img
-{
-    margin-right: 20%;
-    min-width: 40px;
-    min-height: 20px;
-    height: 50%;
-    width: 20%;
-}
 .inhoud
 {
     margin: 10% auto 10px auto;
