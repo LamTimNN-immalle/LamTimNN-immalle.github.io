@@ -1,6 +1,6 @@
 body
 {
-    background-color: white;
+    background-color: rgb(242, 233, 233);
     
 }
 
@@ -11,6 +11,7 @@ header
     position: sticky;
     top: 0px;
     width: 100%;
+    height: 60%;
 }
 
 .logo
@@ -19,6 +20,8 @@ header
     color: blue;
     font-size: 60px;
     margin-left: 10px;
+    height: 60%;
+    width: 70%;
 }
 
 nav
@@ -135,7 +138,7 @@ body:has(.side-menu:checked)
     .menu a:hover
     {
         background-color: transparent;
-        color: gray;
+        color: black;
     }
 
     .hamb
@@ -154,7 +157,7 @@ section
 aside
 {
     float: right;
-    position: fixed;
+    position: relative;
     width: 60%;
 }
 
