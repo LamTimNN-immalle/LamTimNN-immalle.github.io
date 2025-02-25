@@ -11,7 +11,7 @@ header
     position: sticky;
     top: 0px;
     width: 100%;
-    height: 60%;
+    height: 10%;
 }
 
 .logo
@@ -24,127 +24,81 @@ header
     width: 70%;
 }
 
-nav
+#menutoggle
 {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background-color: darkblue;
-    overflow: hidden;
-}
-
-.menu a
-{
-display: block;
-padding: 30px;
-color: var(white);
-}
-
-.menu a:hover
-{
-    background-color: gray;
-}
-
-nav
-{
-    max-height: 0;
-    transition: max-heigt .5s ease-out;
-}
-
-.hamb
-{
-    cursor: pointer;
-    float: right;
-    padding: 40px 20px;
-    border: 5px thick black ;
-}
-
-.hamb-line
-{
-    background: white;
-    display: block;
-    height: 2px;
     position: relative;
-    width: 24px;
+    z-index: 1;
 }
 
-.hamb-line::before,
-.hamb-line::after
+#menutoggle input
 {
-    background-color: white;
-    content: '';
-    display: block;
-    height: 100%;
     position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-}
-.hamb-line::before
-{
-    top: 5px;
-}
-.hamb-line::after
-{
-    top: -5px;
+    width: 40px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
 }
 
-.side-menu
+#menutoggle span
 {
-    display: none;
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transform-origin: 4px 0px;
 }
 
-.side-menu:checked ~ nav
+#menutoggle span:first-child
 {
-    max-height: 100%;
+    transform-origin:0% 0% ;
 }
 
-.side-menu:checked ~ .hamb .hamb-line
+#menutoggle span:nth-last-child(2)
 {
-background: transparent;
+    transform-origin: 0% 100%;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::before
-{
-    transform: rotate(-45deg);
-    top: 0;
+#menutoggle input:checked~span
+{opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::after
+#menutoggle input:checked~span:nth-last-child(3)
 {
-    transform: rotate(45deg);
-    top: 0;
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-body:has(.side-menu:checked)
+.menu
 {
-    overflow: hidden;
+    position: absolute;
+    left: -300px;
+    top: 80px;
+    width: 200px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialised;
+    transition: left 0.5s;
 }
 
-@media (min-witdh: 768px)
-{
-    .nav
-    {
-        max-height: none;
-        top: 0;
-        position: relative;
-        float: right;
-        width: fit-content;
-        background-color: transparent;
-    }
-    .menu li
-    {
-        float: left;
-    }
-    .menu a:hover
-    {
-        background-color: transparent;
-        color: black;
-    }
+.menu li
+{padding: 10px 0;
+    font-size: 22px;
 
-    .hamb
-    {
-        display: none;
-    }
+}
+
+#menutoggle input:checked~ul
+{
+    left: 40px;
 }
 
 section
@@ -164,4 +118,9 @@ aside
 .extraweb
 {
     background-color: gray;
+}
+
+.inhoud
+{
+    margin: 0px auto 0px auto;
 }
