@@ -1,16 +1,16 @@
-body
-{
+/* Algemene styling */
+body {
     background-color: rgb(242, 233, 233);
-    
+    font-family: Arial, sans-serif;
 }
 
-header
-{
+header {
     background-color: darkblue;
     box-shadow: 1px 1px 5px 0px;
     position: sticky;
-    top: 0px;
+    top: 0;
     width: 100%;
+    z-index: 10; /* Zorg ervoor dat de header bovenaan blijft staan */
 }
 
 .logo-link {
@@ -55,7 +55,7 @@ header
 }
 
 #menutoggle span:first-child {
-    transform-origin:0% 0%;
+    transform-origin: 0% 0%;
 }
 
 #menutoggle span:nth-last-child(2) {
@@ -73,6 +73,7 @@ header
     transform: rotate(-45deg) scale(0.2, 0.2);
 }
 
+/* Menu styling */
 .menu {
     position: absolute;
     left: -300px;
@@ -83,7 +84,7 @@ header
     padding-top: 125px;
     background: #ededed;
     list-style-type: none;
-    -webkit-font-smoothing: antialised;
+    -webkit-font-smoothing: antialiased;
     transition: left 0.5s;
 }
 
@@ -96,26 +97,127 @@ header
     left: 40px;
 }
 
-section
-{
+/* Algemeen styling voor secties */
+section {
     background-color: lightgray;
     margin-top: 4%;
     width: 60%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-aside
-{
+aside {
     float: right;
     position: relative;
     width: 60%;
 }
 
-.extraweb
-{
+.extraweb {
     background-color: gray;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
 }
 
-.inhoud
-{
+/* Footer */
+.inhoud {
     margin: 0px auto 0px auto;
+    text-align: center;
+}
+
+footer {
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Mobiele weergave via media query */
+@media screen and (max-width: 768px) {
+    /* Zorg ervoor dat het logo en hamburger-menu goed gepositioneerd zijn */
+    .english {
+        top: -10px; /* Verlaag de vlag iets voor mobiel */
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 50%;
+    }
+
+    /* Het menu moet zichtbaar zijn onder de header op mobiel */
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        height: 100vh;
+        width: 250px;
+        background: #ededed;
+        padding-top: 80px;
+        padding-left: 20px;
+        transition: left 0.3s ease-in-out;
+    }
+
+    /* Menu-items groter maken voor mobiel gebruik */
+    .menu li {
+        font-size: 18px;
+        padding: 15px 0;
+    }
+
+    #menutoggle input:checked~.menu {
+        left: 0;
+    }
+
+    #menutoggle input {
+        width: 50px; /* Vergroot de grootte van de hamburgerknop op mobiel */
+    }
+
+    .hamb-line {
+        display: block;
+        background: #cdcdcd;
+        width: 40px;
+        height: 4px;
+        margin: 6px auto;
+    }
+
+    /* Zorg ervoor dat de secties zich goed aanpassen op mobiele schermen */
+    section, aside {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .extraweb {
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+}
+
+/* Voor schermen groter dan 768px (bijv. tablets en desktops) */
+@media screen and (min-width: 769px) {
+    .logo {
+        width: 200px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu {
+        position: absolute;
+        left: -300px;
+        top: 80px;
+        width: 200px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        background: #ededed;
+    }
 }
