@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    z-index: 10; /* Zorg ervoor dat de header bovenaan blijft staan */
+    z-index: 10;
 }
 
 .header-left {
@@ -25,10 +25,23 @@ header {
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
+/* Logo styling */
 .logo {
     width: 150px; /* Pas de grootte van het logo aan */
+}
+
+/* Engelse vlag naast hamburger menu */
+.english-link {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.english {
+    width: 30px; /* Pas de grootte van de afbeelding aan */
+    height: auto;
 }
 
 /* Hamburger menu */
@@ -59,7 +72,7 @@ header {
 }
 
 #menutoggle span:first-child {
-    transform-origin:0% 0%;
+    transform-origin: 0% 0%;
 }
 
 #menutoggle span:nth-last-child(2) {
@@ -79,6 +92,7 @@ header {
 
 /* Menu styling */
 .menu {
+    display: none; /* Begin met menu verborgen */
     position: absolute;
     left: -300px;
     top: 80px;
@@ -92,29 +106,14 @@ header {
     transition: left 0.5s;
 }
 
-.menu li {
-    padding: 10px 0;
-    font-size: 22px;
-}
-
-#menutoggle input:checked~ul {
+#menutoggle input:checked~.menu {
+    display: block; /* Menu wordt zichtbaar als het hamburger-menu is ingeschakeld */
     left: 40px;
 }
 
-.english {
-    display: inline-block;
-    width: 50px;
-    height: auto;
-    position: absolute;
-    left: 50%;
-    top: -20px; /* Zorg ervoor dat de afbeelding boven de hamburgerknop verschijnt */
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-#menu-toggle-box:checked~.logo-link {
-    opacity: 1;
+.menu li {
+    padding: 10px 0;
+    font-size: 22px;
 }
 
 /* Styling voor secties en afbeeldingen */
@@ -174,13 +173,3 @@ footer {
 
     .hamb-line {
         display: block;
-        background: #cdcdcd;
-        width: 40px;
-        height: 4px;
-        margin: 6px auto;
-    }
-
-    #menutoggle input:checked~.menu {
-        left: 0;
-    }
-}
