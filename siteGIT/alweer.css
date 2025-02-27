@@ -10,26 +10,34 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     z-index: 10; /* Zorg ervoor dat de header bovenaan blijft staan */
 }
 
-.logo-link {
-    display: inline-block;
-    text-decoration: none; /* Verwijdert de standaard linkstijl */
+.header-left {
+    flex: 1;
 }
 
-.english {
-    display: inline-block;
-    width: 50px; /* Pas de breedte van je afbeelding aan */
-    height: auto;
-    position: absolute;
-    left: 50%;
-    top: -20px; /* Zorg ervoor dat de afbeelding boven de hamburgerknop verschijnt */
-    transform: translateX(-50%);
-    opacity: 0; /* Begin met de afbeelding verborgen */
-    transition: opacity 0.3s ease;
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
+.logo {
+    width: 150px; /* Pas de grootte van het logo aan */
+}
+
+.hamb {
+    cursor: pointer;
+    position: relative;
+    top: 0;
+}
+
+/* Hamburger menu */
 #menutoggle {
     position: relative;
     z-index: 1;
@@ -57,7 +65,7 @@ header {
 }
 
 #menutoggle span:first-child {
-    transform-origin: 0% 0%;
+    transform-origin:0% 0%;
 }
 
 #menutoggle span:nth-last-child(2) {
@@ -99,85 +107,75 @@ header {
     left: 40px;
 }
 
-/* Algemeen styling voor secties */
+.english {
+    display: inline-block;
+    width: 50px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: -20px; /* Zorg ervoor dat de afbeelding boven de hamburgerknop verschijnt */
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#menu-toggle-box:checked~.logo-link {
+    opacity: 1;
+}
+
+/* Styling voor secties en afbeeldingen */
+article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
 section {
-    background-color: lightgray;
-    margin-top: 4%;
     width: 60%;
     padding: 20px;
     box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 aside {
-    float: right;
-    position: relative;
-    width: 60%;
+    width: 35%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
 }
 
-.extraweb {
-    background-color: gray;
-    display: inline-block;
-    padding: 10px;
-    text-decoration: none;
-    color: white;
+aside img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Footer */
-.inhoud {
-    margin: 0px auto 0px auto;
-    text-align: center;
-}
-
 footer {
     background-color: darkblue;
     color: white;
     padding: 10px;
     margin-top: 20px;
+    text-align: center;
 }
 
 /* Mobiele weergave via media query */
 @media screen and (max-width: 768px) {
-    /* Zorg ervoor dat het logo en hamburger-menu goed gepositioneerd zijn */
-    .english {
-        top: -10px; /* Verlaag de vlag iets voor mobiel */
+    article {
+        flex-direction: column;
     }
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
+    section, aside {
+        width: 100%;
+    }
+
+    .header-left, .header-right {
+        flex: 1;
     }
 
     .logo {
-        width: 50%;
-    }
-
-    /* Het menu moet zichtbaar zijn onder de header op mobiel */
-    .menu {
-        position: fixed;
-        top: 0;
-        left: -300px;
-        height: 100vh;
-        width: 250px;
-        background: #ededed;
-        padding-top: 80px;
-        padding-left: 20px;
-        transition: left 0.3s ease-in-out;
-    }
-
-    /* Menu-items groter maken voor mobiel gebruik */
-    .menu li {
-        font-size: 18px;
-        padding: 15px 0;
-    }
-
-    #menutoggle input:checked~.menu {
-        left: 0;
-    }
-
-    #menutoggle input {
-        width: 50px; /* Vergroot de grootte van de hamburgerknop op mobiel */
+        width: 100px;
     }
 
     .hamb-line {
@@ -188,18 +186,7 @@ footer {
         margin: 6px auto;
     }
 
-    /* Zorg ervoor dat de secties zich goed aanpassen op mobiele schermen */
-    section, aside {
-        width: 100%;
-        padding: 10px;
+    #menutoggle input:checked~.menu {
+        left: 0;
     }
-
-    .extraweb {
-        padding: 10px;
-        display: block;
-        text-align: center;
-    }
-
-    /* Engelse link zichtbaar wanneer het menu open is */
-    #menu-toggle-box:checked~.logo-link {
-        opacity: 1
+}
