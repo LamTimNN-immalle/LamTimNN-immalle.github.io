@@ -26,6 +26,8 @@ header {
     left: 50%;
     top: -20px; /* Zorg ervoor dat de afbeelding boven de hamburgerknop verschijnt */
     transform: translateX(-50%);
+    opacity: 0; /* Begin met de afbeelding verborgen */
+    transition: opacity 0.3s ease;
 }
 
 #menutoggle {
@@ -197,27 +199,7 @@ footer {
         display: block;
         text-align: center;
     }
-}
 
-/* Voor schermen groter dan 768px (bijv. tablets en desktops) */
-@media screen and (min-width: 769px) {
-    .logo {
-        width: 200px;
-    }
-
-    header {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .menu {
-        position: absolute;
-        left: -300px;
-        top: 80px;
-        width: 200px;
-        margin: -100px 0 0 -50px;
-        padding: 50px;
-        padding-top: 125px;
-        background: #ededed;
-    }
-}
+    /* Engelse link zichtbaar wanneer het menu open is */
+    #menu-toggle-box:checked~.logo-link {
+        opacity: 1
