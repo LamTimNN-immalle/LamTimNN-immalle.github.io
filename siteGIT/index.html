@@ -12,39 +12,38 @@
             <img src="image\logo.png" alt="Boskalis logo" title="slogan" class="logo">
         </div>
         <div class="header-right">
-            <input class="side-menu" type="checkbox" id="side-menu"/>
-            <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+            <!-- Hamburger menu en navigatie rechts -->
+            <nav>
+                <div id="menutoggle">
+                    <input type="checkbox" id="menu-toggle-box"/>
+                    <label for="menu-toggle-box">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <!-- Engelse vlag link die pas zichtbaar is wanneer het hamburger menu open is -->
+                    <a href="ENhome.html" target="_blank" class="logo-link english-link">
+                        <img src="image\Flag_of_the_United_Kingdom_(1-2).svg.png" alt="english flag" title="english site" class="english">
+                    </a>
+                    <ul class="menu">
+                        <li>meer info</li>
+                        <li class="dropdown">
+                            <a href="over ons.html" target="_blank">Over ons</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="Activiteiten.html" target="_blank">Activiteiten</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="Duurzaamheid.html" target="_blank">Duurzaamheid</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="Carrière.html" target="_blank">carrière</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
     </header>
-    <nav>
-        <div id="menutoggle">
-            <input type="checkbox" id="menu-toggle-box"/>
-            <label for="menu-toggle-box">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <!-- De Engelse vlag link die pas zichtbaar is wanneer het hamburger menu open is -->
-            <a href="ENhome.html" target="_blank" class="logo-link english-link">
-                <img src="image\Flag_of_the_United_Kingdom_(1-2).svg.png" alt="english flag" title="english site" class="english">
-            </a>
-            <ul class="menu">
-                <li>meer info</li>
-                <li class="dropdown">
-                    <a href="over ons.html" target="_blank">Over ons</a>
-                </li>
-                <li class="dropdown">
-                    <a href="Activiteiten.html" target="_blank">Activiteiten</a>
-                </li>
-                <li class="dropdown">
-                    <a href="Duurzaamheid.html" target="_blank">Duurzaamheid</a>
-                </li>
-                <li class="dropdown">
-                    <a href="Carrière.html" target="_blank">carrière</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <article class="inhoud">
         <section id="werken">
             <h2>Werk bij Boskalis</h2>
@@ -84,7 +83,7 @@
         </aside>
     </article>
     <footer class="inhoud">
-        <p>2025 &copy; Roayal Boskalis</p>
+        <p>2025 &copy; Lam Tim Nguyen Ngoc: Roayal Boskalis</p>
     </footer>
 </body>
 </html>

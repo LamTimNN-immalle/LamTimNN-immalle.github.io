@@ -31,12 +31,6 @@ header {
     width: 150px; /* Pas de grootte van het logo aan */
 }
 
-.hamb {
-    cursor: pointer;
-    position: relative;
-    top: 0;
-}
-
 /* Hamburger menu */
 #menutoggle {
     position: relative;
