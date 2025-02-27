@@ -13,23 +13,27 @@ header
     width: 100%;
 }
 
-.logo
-{
+.logo-link {
     display: inline-block;
-    color: blue;
-    font-size: 60px;
-    margin-left: 10px;
-    width: 70%;
+    text-decoration: none; /* Verwijdert de standaard linkstijl */
 }
 
-#menutoggle
-{
+.english {
+    display: inline-block;
+    width: 50px; /* Pas de breedte van je afbeelding aan */
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: -20px; /* Zorg ervoor dat de afbeelding boven de hamburgerknop verschijnt */
+    transform: translateX(-50%);
+}
+
+#menutoggle {
     position: relative;
     z-index: 1;
 }
 
-#menutoggle input
-{
+#menutoggle input {
     position: absolute;
     width: 40px;
     cursor: pointer;
@@ -37,8 +41,7 @@ header
     z-index: 2;
 }
 
-#menutoggle span
-{
+#menutoggle span {
     display: block;
     width: 33px;
     height: 4px;
@@ -51,30 +54,26 @@ header
     transform-origin: 4px 0px;
 }
 
-#menutoggle span:first-child
-{
-    transform-origin:0% 0% ;
+#menutoggle span:first-child {
+    transform-origin:0% 0%;
 }
 
-#menutoggle span:nth-last-child(2)
-{
+#menutoggle span:nth-last-child(2) {
     transform-origin: 0% 100%;
 }
 
-#menutoggle input:checked~span
-{opacity: 1;
+#menutoggle input:checked~span {
+    opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
     background: #232323;
 }
 
-#menutoggle input:checked~span:nth-last-child(3)
-{
+#menutoggle input:checked~span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(-45deg) scale(0.2, 0.2);
 }
 
-.menu
-{
+.menu {
     position: absolute;
     left: -300px;
     top: 80px;
@@ -88,14 +87,12 @@ header
     transition: left 0.5s;
 }
 
-.menu li
-{padding: 10px 0;
+.menu li {
+    padding: 10px 0;
     font-size: 22px;
-
 }
 
-#menutoggle input:checked~ul
-{
+#menutoggle input:checked~ul {
     left: 40px;
 }
 
