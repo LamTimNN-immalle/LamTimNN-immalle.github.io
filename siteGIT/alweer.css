@@ -27,71 +27,63 @@ header {
     margin-right: 20px;
 }
 
-/* Navigatiebalk - standaard weergave (grote schermen) */
-@media (min-width: 768px) {
-    #menutoggle {
-        display: none;
-    }
-
-    .menu {
-        display: flex;
-        gap: 20px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .menu li {
-        display: inline-block;
-    }
-
-    .menu a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        padding: 10px 15px;
-        transition: color 0.3s;
-    }
-
-    .menu a:hover {
-        color: #0077b6;
-    }
+/* Navigatiemenu */
+#menutoggle {
+    position: relative;
+    z-index: 10;
 }
 
-/* Kleine schermen: Hamburger menu */
-@media (max-width: 767px) {
-    #menutoggle {
-        position: relative;
-        z-index: 10;
-    }
+#menu-toggle-box {
+    display: none;
+}
 
-    #menutoggle input {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        opacity: 0;
-        cursor: pointer;
-        z-index: 2;
-    }
+#menutoggle label {
+    display: none;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+}
 
+#menutoggle label span {
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: black;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #0077b6;
+}
+
+/* Responsive navigatie */
+@media (max-width: 768px) {
     #menutoggle label {
         display: block;
-        width: 40px;
-        height: 30px;
-        position: relative;
-        cursor: pointer;
     }
 
-    #menutoggle label span {
-        display: block;
-        width: 100%;
-        height: 5px;
-        background: black;
-        margin: 5px 0;
-        transition: 0.3s;
-    }
-
-    /* Menu verborgen bij start */
     .menu {
         position: absolute;
         top: 60px;
@@ -110,20 +102,11 @@ header {
         text-align: center;
     }
 
-    .menu a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        display: block;
-        transition: background 0.3s;
-    }
-
     .menu a:hover {
         background: #f0f0f0;
     }
 
-    /* Menu openen wanneer de checkbox wordt aangevinkt */
-    #menutoggle input:checked ~ .menu {
+    #menu-toggle-box:checked ~ .menu {
         display: flex;
     }
 }
