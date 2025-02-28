@@ -1,94 +1,92 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="alweer.css" type="text/css" rel="stylesheet"/>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
     <title>Home</title>
 </head>
 <body>
     <header>
         <div class="header-left">
-            <img src="image\logo.png" alt="Boskalis logo" title="slogan" class="logo">
+            <img src="image/logo.png" alt="Boskalis logo" title="slogan" class="logo">
         </div>
         <div class="header-right">
-            <!-- Engelse vlag naast hamburger menu -->
-            <a href="ENhome.html" target="_blank" class="logo-link english-link">
-                <img src="image\Flag_of_the_United_Kingdom_(1-2).svg.png" alt="english flag" title="english site" class="english">
+            <!-- Engelse vlag naast het menu -->
+            <a href="ENhome.html" class="english-link">
+                <img src="image/Flag_of_the_United_Kingdom.svg.png" alt="Engelse vlag" title="Engelse site" class="english">
             </a>
-            <!-- Hamburger menu -->
-            <div id="menutoggle">
-                <input type="checkbox" id="menu-toggle-box"/>
-                <label for="menu-toggle-box">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
+            <!-- Navigatiemenu -->
+            <nav>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="menu-icon">&#9776;</label>
                 <ul class="menu">
-                    <li class="dropdown">
-                        <a href="index.html" target="_blank">Home</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="over ons.html" target="_blank">Over ons</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="Activiteiten.html" target="_blank">Activiteiten</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="Duurzaamheid.html" target="_blank">Duurzaamheid</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="Carrière.html" target="_blank">carrière</a>
-                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="over-ons.html">Over ons</a></li>
+                    <li><a href="activiteiten.html">Activiteiten</a></li>
+                    <li><a href="duurzaamheid.html">Duurzaamheid</a></li>
+                    <li><a href="carriere.html">Carrière</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </header>
-    <article class="inhoud">
+
+    <main class="inhoud">
         <section id="werken">
             <h2>Werk bij Boskalis</h2>
             <p>
-                Deze Boskalis website is grotendeels gemaakt in het nederlands. Boskalis vacature en Boskalis internationaal is beschikbaar in het engels.
-                Je kan de openstaande vacatures, trainingsprogramma en sollicitaiemogelijkheden vinden bij carrière.
+                Deze Boskalis website is grotendeels gemaakt in het Nederlands. Boskalis vacatures en Boskalis internationaal zijn beschikbaar in het Engels.
+                Je kunt de openstaande vacatures, trainingsprogramma's en sollicitatiemogelijkheden vinden bij carrière.
             </p>
-            <a href="https://careers.boskalis.com/" class="extraweb">werken bij Boskalis website</a>
+            <a href="https://careers.boskalis.com/" class="extraweb">Werken bij Boskalis website</a>
         </section>
+
         <aside>
-            <img src="image\werknemers .png" alt="werken" title="mensen op werk">
+            <img src="image/werknemers.png" alt="Werken" title="Mensen op werk">
         </aside>
+
         <section>
-            <h2>pers-nieuwsberichten</h2>
+            <h2>Pers- en nieuwsberichten</h2>
             <p>
-                De grootste deel van de pers en nieuwsberichten is in het nederlands en engels.
-                voor nederlands talige berichten moet je in het archief het nederlands talige vlagetje
+                Het grootste deel van de pers- en nieuwsberichten is beschikbaar in het Nederlands en Engels.
+                Voor Nederlandstalige berichten moet je in het archief het Nederlandse vlaggetje selecteren.
             </p>
-            <a href="https://boskalis.com/nl/pers/persberichten-en-bedrijfsnieuws" class="extraweb" title="onze fotograaf">
-                naar pers- en nieuwsberichten
+            <a href="https://boskalis.com/nl/pers/persberichten-en-bedrijfsnieuws" class="extraweb" title="Onze fotograaf">
+                Naar pers- en nieuwsberichten
             </a>
         </section>
+
         <aside>
-            <img src="image\camera persoon op strand.png" alt="camera persoon op strand" title="een internetkabel">
+            <img src="image/camera-persoon-op-strand.png" alt="Camera persoon op strand" title="Een internetkabel">
         </aside>
+
         <section>
             <h2>Download center</h2>
             <p>
-                In de download center zijn er een aantal beschikbare documenten over ons bedrijf  om te downloaden. Bestanden zoals jaarverslagen, brochures, reglementen en notulen.
-                Er is per download een vlagetje om te zeggen in welke taal het document in zit.
-                Voor de zoekfunctie moet je engelse zoektermen gebruiken om het te laten werken
+                In het download center zijn er een aantal beschikbare documenten over ons bedrijf om te downloaden. Bestanden zoals jaarverslagen, brochures, reglementen en notulen.
+                Er is per download een vlaggetje om aan te geven in welke taal het document beschikbaar is.
+                Voor de zoekfunctie moet je Engelse zoektermen gebruiken om het te laten werken.
             </p>
-            <a href="https://careers.boskalis.com/" class="extraweb">naar download center</a>
+            <a href="https://boskalis.com/nl/downloads" class="extraweb">Naar download center</a>
         </section>
+
         <aside>
-            <img src="image\internetkabels.png" alt="internetkabel" title="internetkabel">
+            <img src="image/internetkabels.png" alt="Internetkabel" title="Internetkabel">
         </aside>
-        <section>
-            Locatie:
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2465.8430126111307!2d4.7290556763374365!3d51.82729818728392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c4299bc80a18f3%3A0x1944ad283e228f0!2sBoskalis!5e0!3m2!1snl!2sbe!4v1740776914422!5m2!1snl!2sbe" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <section class="map-container">
+            <h2>Locatie</h2>
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2465.8430126111307!2d4.7290556763374365!3d51.82729818728392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c4299bc80a18f3%3A0x1944ad283e228f0!2sBoskalis!5e0!3m2!1snl!2sbe!4v1740776914422!5m2!1snl!2sbe" 
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
         </section>
-    </article>
+    </main>
+
     <footer class="inhoud">
-        <p>2025 &copy; Lam Tim Nguyen Ngoc: Roayal Boskalis</p>
+        <p>2025 &copy; Lam Tim Nguyen Ngoc: Royal Boskalis</p>
     </footer>
 </body>
-</html> 
+</html>
