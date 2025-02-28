@@ -3,16 +3,20 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Voorkomt horizontaal scrollen */
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
 }
 
 /* Header */
 header {
     background-color: darkblue;
-    position: fixed;
+    box-shadow: 1px 1px 5px 0px;
+    position: fixed; /* Zet de header vast bovenaan */
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 70px;
+    height: 70px; /* Pas de hoogte aan naar wens */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,104 +24,137 @@ header {
     z-index: 10;
 }
 
-.header-left .logo {
-    width: 150px;
+.header-left {
+    flex: 1;
 }
 
 .header-right {
+    flex: 1;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 
-/* Engelse vlag */
-.english {
-    width: 30px;
+/* Logo styling */
+.logo {
+    width: 150px; /* Pas de grootte van het logo aan */
+}
+
+/* Engelse vlag naast hamburger menu */
+.english-link {
+    display: inline-block;
     margin-right: 15px;
 }
 
-/* Menu */
-#menu-toggle {
-    display: none;
+.english {
+    width: 30px; /* Pas de grootte van de afbeelding aan */
+    height: auto;
 }
 
-.menu-icon {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    margin-left: 10px;
+/* Hamburger menu */
+#menutoggle {
+    position: relative;
+    z-index: 2;
 }
 
-.menu-icon span {
-    width: 30px;
-    height: 3px;
-    background: white;
-    margin: 5px 0;
-    display: block;
-}
-
-.menu {
-    display: none;
+#menutoggle input {
     position: absolute;
-    top: 70px;
-    right: 0;
-    background: #ededed;
-    width: 220px;
-    list-style: none;
-    padding: 10px;
+    width: 40px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
 }
 
-#menu-toggle:checked + .menu-icon + .menu {
+#menutoggle span {
     display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    background: #cdcdcd;
+    border-radius: 3px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
+#menutoggle input:checked ~ span {
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+
+#menutoggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(-45deg) scale(0.2, 0.2);
+}
+
+/* Menu styling */
+.menu {
+    display: none; /* Begin met menu verborgen */
+    position: absolute;
+    left: -220px; /* Zorgt ervoor dat het menu echt uit beeld is */
+    top: 70px; /* Menu start net onder de header */
+    width: 220px; /* Breder maken voor leesbaarheid */
+    padding: 20px;
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transition: left 0.5s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#menutoggle input:checked ~ .menu {
+    display: block; 
+    left: 10; /* Menu netjes uitklappen */
+}
+
+/* Stijl voor de menu-items */
 .menu li {
-    padding: 10px;
+    padding: 10px 0;
     font-size: 18px;
 }
 
-/* Content */
+/* Content styling */
 article {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-    margin-top: 80px;
+    margin-top: 80px; /* Zorg ervoor dat er ruimte is voor de header */
 }
 
 section {
     width: 60%;
     padding: 20px;
     box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 aside {
     width: 35%;
     padding: 20px;
     box-sizing: border-box;
+    margin-top: 20px;
 }
 
 aside img {
     width: 100%;
+    height: auto;
     display: block;
 }
 
-/* Google Maps */
-.maps-container iframe {
-    width: 100%;
-    height: 300px;
-    border: none;
+/* Voorkom dat inhoud tegen het menu aan zit */
+.inhoud {
+    margin-left: 10px;
 }
 
 /* Footer */
 footer {
     background-color: darkblue;
     color: white;
-    text-align: center;
     padding: 10px;
     margin-top: 20px;
+    text-align: center;
 }
 
-/* Mobiele versie */
+/* Mobiele weergave via media query */
 @media screen and (max-width: 768px) {
     article {
         flex-direction: column;
@@ -127,16 +164,21 @@ footer {
         width: 100%;
     }
 
+    .header-left, .header-right {
+        flex: 1;
+    }
+
     .logo {
         width: 100px;
     }
 
+    /* Mobiel menu */
     .menu {
-        width: 100%;
-        left: -100%;
+        width: 100%; /* Volledige breedte van het scherm */
+        left: -100%; /* Helemaal buiten beeld */
     }
 
-    #menu-toggle:checked + .menu-icon + .menu {
+    #menutoggle input:checked ~ .menu {
         left: 0;
     }
 }
