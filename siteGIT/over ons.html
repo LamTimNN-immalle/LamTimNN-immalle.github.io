@@ -4,43 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="alweer.css" type="text/css" rel="stylesheet"/>
-    <title>Home</title>
+    <title>Over ons</title>
 </head>
 <body>
     <header>
-        <img src="image\logo.png" alt="Boskalis logo" title="slogan" class="logo">
-        <input class="side-menu" type="checkbox" id="side-menu"/>
-        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-</header>
-<nav>
-    <ul class="menu">
-        <li>
-            meer info
-        </li>
-        <li class="dropdown">
-            <a href="over ons.html" target="_blank">
-                Over ons
+        <div class="header-left">
+            <img src="image/logo.png" alt="Boskalis logo" title="slogan" class="logo">
+        </div>
+        <div class="header-right">
+            <!-- Engelse vlag naast hamburger menu -->
+            <a href="ENhome.html" target="_blank" class="logo-link english-link">
+                <img src="image/Flag_of_the_United_Kingdom_(1-2).svg.png" alt="Engelse vlag" title="Engelse site" class="english">
             </a>
-        </li>
-        <li class="dropdown">
-            <a href="Activiteiten.html" target="_blank">
-                Activiteiten
-            </a>
-        </li>
-        <li class="dropdown">
-            <a href="Duurzaamheid.html" target="_blank">
-                Duurzaamheid
-            </a>
-        </li>
-        <li class="dropdown">
-            <a href="Carrière.html" target="_blank">
-                carrière
-            </a>
-        </li>
-        <li class="dropdown">
-            <a href="ENhome.html" target="_blank">
-                <img src="image\Flag_of_the_United_Kingdom_(1-2).svg.png" alt="english flag" title="english site">
-            </a>
-        </li>z
-    </ul>
-</nav>
+            <!-- Hamburger menu -->
+            <div id="menutoggle">
+                <input type="checkbox" id="menu-toggle-box"/>
+                <label for="menu-toggle-box">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul class="menu">
+                    <li>Meer info</li>
+                    <li class="dropdown">
+                        <a href="over-ons.html" target="_blank">Over ons</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="activiteiten.html" target="_blank">Activiteiten</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="duurzaamheid.html" target="_blank">Duurzaamheid</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="carriere.html" target="_blank">Carrière</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <article>
+        <section>
+            <h1>Het creëren van nieuwe horizons</h1>
+            <p>
+                Boskalis is een toonaangevend wereldwijd bagger- en offshore-aannemingsbedrijf en maritieme dienstverlener.
+                Wij bieden een unieke combinatie van experts, schepen en activiteiten.
+                Met onze oorsprong in Nederland opereren wij al meer dan 100 jaar.
+                Vandaag de dag creëren wij nieuwe kansen voor onze belanghebbenden in de haven-, offshore-energie-, maritieme en binnenlandse infrastructuurmarkten.
+            </p>
+        </section>
+        <aside>
+            <img src="image/BotenVaren.jpg" alt="Boten">
+        </aside>
+        <section>
+            <h2>Bedrijfsprofiel Boskalis</h2>
+            <p>
+                Wij bieden het breedste scala aan gespecialiseerde bagger-, offshore transport- en installatiediensten,
+                evenals maritieme diensten, waaronder sleepdiensten en berging.
+                Hierdoor kunnen wij innovatieve en alles-in-één oplossingen bieden om elke uitdaging aan te gaan.
+            </p>
+            <p>11.000 werknemers</p>
+            <p>Actief in 90 landen</p>
+            <p>Meer dan 500 vaartuigen en drijvende werktuigen</p>
+        </section>
+        <aside>
+            <img src="image/BoskalisVanZand.jpg" alt="Logo van Zand">
+        </aside>
+    </article>
+    <footer class="inhoud">
+        <p>2025 &copy; Lam Tim Nguyen Ngoc: Royal Boskalis</p>
+    </footer>
+</body>
+</html>
