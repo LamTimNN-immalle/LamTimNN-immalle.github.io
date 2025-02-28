@@ -102,7 +102,7 @@ header {
 
 #menutoggle input:checked ~ .menu {
     display: block; 
-    left: 0; /* Menu netjes uitklappen */
+    left: 10; /* Menu netjes uitklappen */
 }
 
 /* Stijl voor de menu-items */
