@@ -1,4 +1,4 @@
-/* Algemene stijl */
+/* Algemene stijlen */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -14,101 +14,188 @@ header {
     background-color: white;
     padding: 15px 30px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
+    flex-wrap: wrap; /* Zorgt ervoor dat elementen onder elkaar komen bij kleinere schermen */
 }
 
 /* Logo */
-.logo {
+.header-left .logo {
     height: 50px;
+    max-width: 100%;
 }
 
 /* Engelse vlag */
-.english {
+.english-link .english {
     height: 30px;
     margin-right: 20px;
 }
 
-/* Hamburger menu */
-#menu-toggle {
-    display: none;
+/* Navigatiebalk - standaard weergave (grote schermen) */
+@media (min-width: 768px) {
+    #menutoggle {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        display: inline-block;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 10px 15px;
+        transition: color 0.3s;
+    }
+
+    .menu a:hover {
+        color: #0077b6;
+    }
 }
 
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 35px;
-    height: 30px;
-    cursor: pointer;
-}
+/* Kleine schermen: Hamburger menu */
+@media (max-width: 767px) {
+    #menutoggle {
+        position: relative;
+        z-index: 10;
+        margin-top: 10px;
+    }
 
-.hamburger span {
-    display: block;
-    width: 100%;
-    height: 5px;
-    background: black;
-    transition: 0.3s;
-}
+    #menutoggle input {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+    }
 
-/* Verborgen menu */
-.menu {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: white;
-    width: 220px;
-    display: none;
-    flex-direction: column;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px 0;
-}
+    #menutoggle label {
+        display: block;
+        width: 40px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+    }
 
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    #menutoggle label span {
+        display: block;
+        width: 100%;
+        height: 5px;
+        background: black;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
 
-.menu li {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-}
+    /* Menu verborgen bij start */
+    .menu {
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: white;
+        width: 220px;
+        display: none;
+        flex-direction: column;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
 
-.menu a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    display: block;
-    transition: background 0.3s;
-}
+    .menu li {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
 
-.menu a:hover {
-    background: #f0f0f0;
-}
+    .menu a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        display: block;
+        transition: background 0.3s;
+    }
 
-/* Toon menu bij checkbox-check */
-#menu-toggle:checked ~ .menu {
-    display: flex;
-}
+    .menu a:hover {
+        background: #f0f0f0;
+    }
 
-/* Afbeeldingen niet te breed */
-aside img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
-}
-
-/* Responsief voor mobiel */
-@media (max-width: 768px) {
-    .hamburger {
+    /* Menu openen wanneer de checkbox wordt aangevinkt */
+    #menutoggle input:checked ~ .menu {
         display: flex;
     }
+}
+
+/* Artikel en inhoud */
+article {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Secties */
+section {
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Afbeeldingen */
+aside img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+/* Responsieve afbeeldingen */
+@media (max-width: 600px) {
+    aside img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Verander de layout van de header bij kleine schermen */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        margin-top: 10px;
+    }
+
     .menu {
         width: 100%;
-        right: 0;
+    }
+
+    /* Zorg ervoor dat de navigatiebalk volledig past */
+    .menu li {
+        padding: 12px;
     }
 }

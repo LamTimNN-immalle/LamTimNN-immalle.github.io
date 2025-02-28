@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="alweer.css" type="text/css" rel="stylesheet"/>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
     <title>Home</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
             <img src="image/logo.png" alt="Boskalis logo" title="slogan" class="logo">
         </div>
         <div class="header-right">
-            <!-- Engelse vlag -->
+            <!-- English flag next to hamburger menu -->
             <a href="ENhome.html" target="_blank" class="logo-link english-link">
                 <img src="image/Flag_of_the_United_Kingdom_(1-2).svg.png" alt="English flag" title="English site" class="english">
             </a>
@@ -25,57 +25,67 @@
                     <span></span>
                 </label>
                 <ul class="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="over ons.html">About us</a></li>
-                    <li><a href="Activiteiten.html">Activities</a></li>
-                    <li><a href="Duurzaamheid.html">Sustainability</a></li>
-                    <li><a href="Carrière.html">Career</a></li>
+                    <li>More info</li>
+                    <li class="dropdown">
+                        <a href="about-us.html" target="_blank">About us</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="activities.html" target="_blank">Activities</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="sustainability.html" target="_blank">Sustainability</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="career.html" target="_blank">Career</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </header>
-    
-    <main>
-        <article class="inhoud">
-            <section id="werken">
-                <h2>Work at Boskalis</h2>
-                <p>
-                    This Boskalis website is mostly in Dutch. Job vacancies and international info are in English.
-                    You can find vacancies, training programs, and applications under "Career".
-                </p>
-                <a href="https://careers.boskalis.com/" class="extraweb">Work at Boskalis website</a>
-            </section>
-            <aside><img src="image/werknemers.png" alt="working" title="people at work"></aside>
-
-            <section>
-                <h2>Press and News Reports</h2>
-                <p>
-                    Press and news reports are available in both Dutch and English.
-                    Select the Dutch flag for Dutch reports.
-                </p>
-                <a href="https://boskalis.com/nl/pers/persberichten-en-bedrijfsnieuws" class="extraweb">Go to press and news reports</a>
-            </section>
-            <aside><img src="image/camera_persoon_op_strand.png" alt="Press"></aside>
-
-            <section>
-                <h2>Download Center</h2>
-                <p>
-                    Download annual reports, brochures, regulations, and more. 
-                    Use English search terms for better results.
-                </p>
-                <a href="https://careers.boskalis.com/" class="extraweb">Go to Download Center</a>
-            </section>
-            <aside><img src="image/internetkabels.png" alt="Internet cables"></aside>
-        </article>
-
-        <section class="locatie">
-            <h2>Location</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <article class="content">
+        <section id="working">
+            <h2>Work at Boskalis</h2>
+            <p>
+                This Boskalis website is mostly in Dutch. The Boskalis job openings and international Boskalis information are available in English.
+                You can find the open job vacancies, training programs, and application options in the career section.
+            </p>
+            <a href="https://careers.boskalis.com/" class="extraweb">Work at Boskalis website</a>
         </section>
-    </main>
-
-    <footer>
-        <p>2025 &copy; Lam Tim Nguyen Ngoc: Royal Boskalis</p>
+        <aside>
+            <img src="image/employees.png" alt="working" title="people at work">
+        </aside>
+        <section>
+            <h2>Press & news reports</h2>
+            <p>
+                Most of the press and news reports are available in both Dutch and English.
+                For Dutch-language reports, you need to select the Dutch flag in the archive.
+            </p>
+            <a href="https://boskalis.com/en/press/press-releases-and-company-news" class="extraweb" title="our photographer">
+                Go to press & news reports
+            </a>
+        </section>
+        <aside>
+            <img src="image/camera-person-on-beach.png" alt="camera person on beach" title="an internet cable">
+        </aside>
+        <section>
+            <h2>Download center</h2>
+            <p>
+                In the download center, several documents about our company are available for download, such as annual reports, brochures, regulations, and minutes.
+                Each download has a flag indicating the language of the document.
+                For the search function, you must use English search terms for it to work.
+            </p>
+            <a href="https://careers.boskalis.com/" class="extraweb">Go to download center</a>
+        </section>
+        <aside>
+            <img src="image/internet-cables.png" alt="internet cable" title="internet cable">
+        </aside>
+        <section>
+            Location:
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2465.8430126111307!2d4.7290556763374365!3d51.82729818728392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c4299bc80a18f3%3A0x1944ad283e228f0!2sBoskalis!5e0!3m2!1sen!2sbe!4v1740764897437!5m2!1sen!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </article>
+    <footer class="content">
+        <p>2025 &copy; Royal Boskalis</p>
     </footer>
 </body>
 </html>

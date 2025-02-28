@@ -3,54 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="alweer.css" type="text/css" rel="stylesheet"/>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
     <title>Home</title>
 </head>
 <body>
     <header>
         <div class="header-left">
-            <img src="image/logo.png" alt="Boskalis logo" class="logo">
+            <img src="image/logo.png" alt="Boskalis logo" title="slogan" class="logo">
         </div>
         <div class="header-right">
-            <!-- Engelse vlag -->
-            <a href="ENhome.html" target="_blank" class="english-link">
-                <img src="image/Flag_of_the_United_Kingdom_(1-2).svg.png" alt="English flag" class="english">
+            <!-- Engelse vlag naast het hamburger menu -->
+            <a href="ENhome.html" target="_blank" class="logo-link english-link">
+                <img src="image/Flag_of_the_United_Kingdom_(1-2).svg.png" alt="Engelse vlag" title="Engelse site" class="english">
             </a>
             <!-- Hamburger menu -->
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <nav class="menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="over ons.html">About us</a></li>
-                    <li><a href="Activiteiten.html">Activities</a></li>
-                    <li><a href="Duurzaamheid.html">Sustainability</a></li>
-                    <li><a href="Carrière.html">Career</a></li>
+            <div id="menutoggle">
+                <input type="checkbox" id="menu-toggle-box"/>
+                <label for="menu-toggle-box">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul class="menu">
+                    <li>Meer info</li>
+                    <li class="dropdown">
+                        <a href="about-us.html" target="_blank">Over ons</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="activities.html" target="_blank">Activiteiten</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="sustainability.html" target="_blank">Duurzaamheid</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="career.html" target="_blank">Carrière</a>
+                    </li>
                 </ul>
-            </nav>
+            </div>
         </div>
     </header>
-
-    <main>
-        <article class="inhoud">
-            <section id="werken">
-                <h2>Work at Boskalis</h2>
-                <p>
-                    This Boskalis website is mostly in Dutch. Job vacancies and international info are in English.
-                    You can find vacancies, training programs, and applications under "Career".
-                </p>
-                <a href="https://careers.boskalis.com/" class="extraweb">Work at Boskalis website</a>
-            </section>
-            <aside><img src="image/werknemers.png" alt="working"></aside>
-        </article>
-    </main>
-
-    <footer>
-        <p>2025 &copy; Lam Tim Nguyen Ngoc: Royal Boskalis</p>
+    <article class="content">
+        <section id="working">
+            <h2>Werken bij Boskalis</h2>
+            <p>
+                Deze Boskalis-website is voornamelijk in het Nederlands. De vacatures en internationale informatie van Boskalis zijn beschikbaar in het Engels.
+                Je kunt de openstaande vacatures, opleidingsprogramma's en sollicitatiemogelijkheden vinden in de carrière sectie.
+            </p>
+            <a href="https://careers.boskalis.com/" class="extraweb">Werken bij Boskalis website</a>
+        </section>
+        <aside>
+            <img src="image/employees.png" alt="werken" title="mensen aan het werk">
+        </aside>
+        <section>
+            <h2>Pers & nieuwsberichten</h2>
+            <p>
+                De meeste pers- en nieuwsberichten zijn beschikbaar in zowel het Nederlands als het Engels.
+                Voor Nederlandstalige berichten moet je de Nederlandse vlag selecteren in het archief.
+            </p>
+            <a href="https://boskalis.com/en/press/press-releases-and-company-news" class="extraweb" title="onze fotograaf">
+                Ga naar pers- en nieuwsberichten
+            </a>
+        </section>
+        <aside>
+            <img src="image/camera-person-on-beach.png" alt="camera persoon op het strand" title="een internetkabel">
+        </aside>
+        <section>
+            <h2>Downloadcentrum</h2>
+            <p>
+                In het downloadcentrum zijn verschillende documenten over ons bedrijf beschikbaar voor download, zoals jaarverslagen, brochures, regelgeving en notulen.
+                Elk document heeft een vlag die de taal van het document aangeeft.
+                Voor de zoekfunctie moet je Engelse zoektermen gebruiken om het te laten werken.
+            </p>
+            <a href="https://careers.boskalis.com/" class="extraweb">Ga naar downloadcentrum</a>
+        </section>
+        <aside>
+            <img src="image/internet-cables.png" alt="internetkabel" title="internetkabel">
+        </aside>
+        <section>
+            Locatie:
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2465.8430126111307!2d4.7290556763374365!3d51.82729818728392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c4299bc80a18f3%3A0x1944ad283e228f0!2sBoskalis!5e0!3m2!1sen!2sbe!4v1740764897437!5m2!1sen!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </article>
+    <footer class="content">
+        <p>2025 &copy; Royal Boskalis</p>
     </footer>
 </body>
 </html>
