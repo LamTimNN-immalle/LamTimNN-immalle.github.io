@@ -1,201 +1,185 @@
-/* Algemene stijlen */
-body {
-    font-family: Arial, sans-serif;
+
+/* Algemene styling */
+body, html {
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Voorkomt horizontaal scrollen */
+    font-family: Arial, sans-serif;
 }
 
 /* Header */
 header {
+    background-color: darkblue;
+    box-shadow: 1px 1px 5px 0px;
+    position: fixed; /* Zet de header vast bovenaan */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* Pas de hoogte aan naar wens */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
-    padding: 15px 30px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap; /* Zorgt ervoor dat elementen onder elkaar komen bij kleinere schermen */
+    padding: 0 20px;
+    z-index: 10;
 }
 
-/* Logo */
-.header-left .logo {
-    height: 50px;
-    max-width: 100%;
+.header-left {
+    flex: 1;
 }
 
-/* Engelse vlag */
-.english-link .english {
-    height: 30px;
-    margin-right: 20px;
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-/* Navigatiebalk - standaard weergave (grote schermen) */
-@media (min-width: 768px) {
-    #menutoggle {
-        display: none;
-    }
-
-    .menu {
-        display: flex;
-        gap: 20px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .menu li {
-        display: inline-block;
-    }
-
-    .menu a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        padding: 10px 15px;
-        transition: color 0.3s;
-    }
-
-    .menu a:hover {
-        color: #0077b6;
-    }
+/* Logo styling */
+.logo {
+    width: 150px; /* Pas de grootte van het logo aan */
 }
 
-/* Kleine schermen: Hamburger menu */
-@media (max-width: 767px) {
-    #menutoggle {
-        position: relative;
-        z-index: 10;
-        margin-top: 10px;
-    }
-
-    #menutoggle input {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        opacity: 0;
-        cursor: pointer;
-        z-index: 2;
-    }
-
-    #menutoggle label {
-        display: block;
-        width: 40px;
-        height: 30px;
-        position: relative;
-        cursor: pointer;
-    }
-
-    #menutoggle label span {
-        display: block;
-        width: 100%;
-        height: 5px;
-        background: black;
-        margin: 5px 0;
-        transition: 0.3s;
-    }
-
-    /* Menu verborgen bij start */
-    .menu {
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        background: white;
-        width: 220px;
-        display: none;
-        flex-direction: column;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-    }
-
-    .menu li {
-        padding: 15px;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
-    }
-
-    .menu a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        display: block;
-        transition: background 0.3s;
-    }
-
-    .menu a:hover {
-        background: #f0f0f0;
-    }
-
-    /* Menu openen wanneer de checkbox wordt aangevinkt */
-    #menutoggle input:checked ~ .menu {
-        display: flex;
-    }
+/* Engelse vlag naast hamburger menu */
+.english-link {
+    display: inline-block;
+    margin-right: 15px;
 }
 
-/* Artikel en inhoud */
-article {
-    max-width: 900px;
-    margin: 20px auto;
+.english {
+    width: 30px; /* Pas de grootte van de afbeelding aan */
+    height: auto;
+}
+
+/* Hamburger menu */
+#menutoggle {
+    position: relative;
+    z-index: 2;
+}
+
+#menutoggle input {
+    position: absolute;
+    width: 40px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+#menutoggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    background: #cdcdcd;
+    border-radius: 3px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menutoggle input:checked ~ span {
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+
+#menutoggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(-45deg) scale(0.2, 0.2);
+}
+
+/* Menu styling */
+.menu {
+    display: none; /* Begin met menu verborgen */
+    position: absolute;
+    left: -220px; /* Zorgt ervoor dat het menu echt uit beeld is */
+    top: 70px; /* Menu start net onder de header */
+    width: 220px; /* Breder maken voor leesbaarheid */
     padding: 20px;
-    background: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transition: left 0.5s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Secties */
+#menutoggle input:checked ~ .menu {
+    display: block; 
+    left: 10; /* Menu netjes uitklappen */
+}
+
+/* Stijl voor de menu-items */
+.menu li {
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+/* Content styling */
+article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 80px; /* Zorg ervoor dat er ruimte is voor de header */
+}
+
 section {
-    margin-bottom: 30px;
+    width: 60%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
-h1, h2 {
-    color: #333;
+aside {
+    width: 35%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
 }
 
-p {
-    line-height: 1.6;
-}
-
-/* Afbeeldingen */
 aside img {
     width: 100%;
-    max-width: 600px;
+    height: auto;
     display: block;
-    margin: 10px auto;
-    border-radius: 10px;
+}
+
+/* Voorkom dat inhoud tegen het menu aan zit */
+.inhoud {
+    margin-left: 10px;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    background: #222;
+    background-color: darkblue;
     color: white;
-    padding: 20px;
-    margin-top: 30px;
-    font-size: 14px;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
 }
 
-/* Responsieve afbeeldingen */
-@media (max-width: 600px) {
-    aside img {
-        width: 100%;
-        height: auto;
-    }
-
-    /* Verander de layout van de header bij kleine schermen */
-    header {
+/* Mobiele weergave via media query */
+@media screen and (max-width: 768px) {
+    article {
         flex-direction: column;
-        align-items: flex-start;
     }
 
-    .header-right {
-        margin-top: 10px;
-    }
-
-    .menu {
+    section, aside {
         width: 100%;
     }
 
-    /* Zorg ervoor dat de navigatiebalk volledig past */
-    .menu li {
-        padding: 12px;
+    .header-left, .header-right {
+        flex: 1;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    /* Mobiel menu */
+    .menu {
+        width: 100%; /* Volledige breedte van het scherm */
+        left: -100%; /* Helemaal buiten beeld */
+    }
+
+    #menutoggle input:checked ~ .menu {
+        left: 0;
     }
 }
